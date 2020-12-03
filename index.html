@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo list</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Todo list</title>
 
-    <script src="https://unpkg.com/vue@next"></script>
-</head>
-<body>
-    <div id="app">
-        {{ message }}
-    </div>
-    <script src="script.js"></script>
-</body>
+        <script src="https://unpkg.com/vue@next"></script>
+    </head>
+    <body>
+        <div id="app">
+            
+            <h1>Todo list</h1>
+            
+            
+            <add @newnote="addNote"></add>
+            <note v-for="todo in todos"  v-bind:content="todo" @click="invert"></note>
+            
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>
